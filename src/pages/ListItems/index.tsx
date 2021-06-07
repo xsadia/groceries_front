@@ -46,7 +46,7 @@ export function ListItems() {
 
     async function handleSubmit(data: FormData) {
 
-        if (data.content === "" || data.content === " " || data.quantity <= 0) {
+        if (data.content === "" || data.content === " ") {
             return;
         }
 
@@ -105,7 +105,7 @@ export function ListItems() {
                             {items.length !== 0 ? items.map(item => (
                                 <div key={item.id} >
                                     <h3>{item.content}</h3>
-                                    <strong>{item.quantity} {item.quantity > 1 ? 'unidades' : 'unidade'}</strong>
+                                    <strong>{item.quantity} {item.quantity > 0 ? item.quantity > 1 ? 'unidades' : 'unidade' : ''}</strong>
                                     <button onClick={() => handleClick(item.id)} ><FiTrash2 size={20} /></button>
                                 </div>
                             )) :
@@ -126,7 +126,6 @@ export function ListItems() {
                                     name="quantity"
                                     type="number"
                                     placeholder="quantidade"
-                                    min="1"
                                 />
                             </div>
                             <Button>Submit</Button>

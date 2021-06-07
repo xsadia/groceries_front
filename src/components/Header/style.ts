@@ -25,6 +25,10 @@ export const Content = styled.div`
             font-size: 2rem;
             text-decoration: none;
             font-weight: 600;
+
+            span.name-header {
+                color: var(--green);
+            }
         }
     }
 

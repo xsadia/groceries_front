@@ -24,7 +24,7 @@ export function Header({ headerLinks, user }: HeaderProps) {
             <Content>
                 <div className="logo-box">
                     <img src={logoImg} alt="imagem de uma Sacola de plastico" />
-                    <Link to="/homepage">Listinha do fefos</Link>
+                    <Link to="/homepage">{user ? <span>Listinha de <span className="name-header">{user}</span></span> : 'Listinha'}</Link>
                 </div>
 
                 <div className="links-box">
